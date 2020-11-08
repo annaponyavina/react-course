@@ -1,7 +1,19 @@
 import React from 'react'
 import './Features.css'
+import FeaturesSliderItem from "./FeaturesSliderItem";
 
 const Features = () => {
+  const featuresData = [
+    {image: '1', text: 'Первое целевое преимущество'},
+    {image: '2', text: 'Второе целевое преимущество'},
+    {image: '3', text: 'Третье целевое преимущество'},
+    {image: '4', text: 'Четвертое целевое преимущество'}
+  ];
+  const outputData = featuresData.map(item => <FeaturesSliderItem
+      style={{backgroundImage: `url(./images/${item.image}.svg)`}}
+      text={item.text}
+      key={item.image}/>)
+
   return (
       <section className="features">
         <div className="wrapper">
@@ -14,22 +26,7 @@ const Features = () => {
             </div>
             <div className="features-slider">
               <div className="features-slider_items">
-                <div className="features-slider_item">
-                  {/*<div className="features-img" style="background-image: url(../images/1.svg)"></div>*/}
-                  <div className="features-feature">Первое целевое преимущество</div>
-                </div>
-                <div className="features-slider_item">
-                  {/*<div className="features-img" style="background-image: url(../images/2.svg)"></div>*/}
-                  <div className="features-feature">Второе целевое преимущество</div>
-                </div>
-                <div className="features-slider_item">
-                  {/*<div className="features-img" style="background-image: url(../images/3.svg)"></div>*/}
-                  <div className="features-feature">Третье целевое преимущество</div>
-                </div>
-                <div className="features-slider_item">
-                  {/*<div className="features-img" style="background-image: url(./images/4.svg)"></div>*/}
-                  <div className="features-feature">Четвертое целевое преимущество</div>
-                </div>
+                {outputData}
               </div>
               <button className="features-slider-arrow features-slider-prev">
                 <svg width="9" height="16"
