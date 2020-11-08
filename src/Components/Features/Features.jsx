@@ -9,6 +9,7 @@ const Features = () => {
     {image: '3', text: 'Третье целевое преимущество'},
     {image: '4', text: 'Четвертое целевое преимущество'}
   ];
+
   const outputData = featuresData.map(item => <FeaturesSliderItem
       style={{backgroundImage: `url(./images/${item.image}.svg)`}}
       text={item.text}
