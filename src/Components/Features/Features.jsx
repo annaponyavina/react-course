@@ -3,18 +3,6 @@ import './Features.css'
 import FeaturesSliderItem from "./FeaturesSliderItem";
 
 const Features = () => {
-  const featuresData = [
-    {image: '1', text: 'Первое целевое преимущество'},
-    {image: '2', text: 'Второе целевое преимущество'},
-    {image: '3', text: 'Третье целевое преимущество'},
-    {image: '4', text: 'Четвертое целевое преимущество'}
-  ];
-
-  const outputData = featuresData.map(item => <FeaturesSliderItem
-      style={{backgroundImage: `url(./images/${item.image}.svg)`}}
-      text={item.text}
-      key={item.image}/>)
-
   return (
       <section className="features">
         <div className="wrapper">
@@ -27,7 +15,7 @@ const Features = () => {
             </div>
             <div className="features-slider">
               <div className="features-slider_items">
-                {outputData}
+                <FeaturesSliderItem />
               </div>
               <button className="features-slider-arrow features-slider-prev">
                 <svg width="9" height="16"
